@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# e-comm-movies 🎬🛒
 
-## Getting Started
+Projeto desenvolvido como desafio técnico para criação de um e-commerce de filmes utilizando **React**, **Next.js**, **TypeScript** e **Tailwind CSS**.
 
-First, run the development server:
+## Desafio 💡
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+O objetivo é criar um fluxo de compra simples com três telas principais:
+
+- **Home 🏠:** Lista de filmes obtida via API, permitindo adicionar ao carrinho.
+- **Carrinho 🛒:** Exibe itens adicionados, permite remoção e mostra o valor total. Exibe estado vazio se não houver itens.
+- **Compra Realizada ✅:** Tela de confirmação após finalizar a compra, com opção de voltar à Home.
+
+---
+
+## Arquitetura do Projeto 🏗️
+
+O projeto segue uma arquitetura modular, separando responsabilidades por domínio:
+
+```
+src/
+  assets/           # Imagens e estilos globais 🖼️
+  modules/          # Módulos de domínio (cart, complete, home) 📦
+  pages/            # Páginas Next.js (roteamento) 📄
+  share/            # Componentes, serviços e tipos compartilhados ♻️
+  utils/            # Funções utilitárias 🛠️
+public/             # Assets públicos (favicons, imagens) 🌐
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Componentização:** Componentes reutilizáveis em `share/components` 🧩
+- **Gerenciamento de estado:** Zustand em `share/store` 🗃️
+- **Estilização:** Tailwind CSS (pode ser adaptado para styled-components) 🎨
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instalação ⚙️
 
-## Learn More
+1. **Clone o repositório:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   git clone https://github.com/seu-usuario/e-comm-movies.git
+   cd e-comm-movies
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Instale as dependências:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```sh
+   npm install
+   # ou
+   yarn install
+   ```
 
-## Deploy on Vercel
+3. **Inicie o servidor de desenvolvimento:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```sh
+   npm run dev
+   # ou
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Acesse:**  
+   [http://localhost:3000](http://localhost:3000) 🌍
+
+---
+
+## Variáveis de Ambiente 🌱
+
+O projeto utiliza uma variável de ambiente para definir a URL base da API:
+
+```env
+BASE_URL=https://wefit-movies.vercel.app
+```
+
+Para rodar localmente, crie um arquivo `.env` na raiz do projeto com o conteúdo acima.  
+A API é pública, então não é necessário adicionar chaves ou tokens.
+
+---
+
+## Tecnologias Utilizadas 🛠️
+
+- [Next.js 14](https://nextjs.org/) ⚡
+- [React 18](https://react.dev/) ⚛️
+- [TypeScript](https://www.typescriptlang.org/) 🟦
+- [Zustand](https://github.com/pmndrs/zustand) 🐻
+- [Tailwind CSS](https://tailwindcss.com/) 💨
+- [Axios](https://axios-http.com/) 🔗
+
+---
+
+## Avaliação 📝
+
+- Fidelidade ao layout do Figma 🎨
+- Funcionamento sem bugs 🐞
+- Organização e clareza do código 📚
+- Componentização e reutilização 🧩
+- Boas práticas de TypeScript e estilização ✅
+
+---
+
+## Deploy 🚀
+
+Projeto pode ser acessado aqui: [Vercel](https://e-comm-movies.vercel.app/) 🌐
+
+---
+
+## Contato 📬
+
+Em caso de dúvidas, fique à vontade para entrar em contato comigo pelo meu [LinkedIn](https://www.linkedin.com/in/seu-perfil/) ou pelo meu [e-mail](mailto:seu-email@example.com). Estou à disposição para ajudar!
