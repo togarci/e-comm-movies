@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { SVGCart } from '@/app/share/svg';
+import { SVGCart } from '@/share/svg';
 
-import { useShoppingCartStore } from '@/app/share/store/shopping-cart';
+import { useShoppingCartStore } from '@/share/store/shopping-cart';
 
 const Header = () => {
   const { cartItems } = useShoppingCartStore();
@@ -13,7 +13,7 @@ const Header = () => {
           <h1 className="font-bold text-xl">WeMovies</h1>
         </Link>
 
-        <Link href={'/shopping/cart'} className="flex gap-3">
+        <Link href={'/cart'} className="flex gap-3">
           <div className="flex flex-col justify-center items-end">
             <label className="font-semibold text-sm max-md:hidden">Meu Carrinho</label>
             <span className="font-semibold text-xs text-gray-400">{cartItems?.length || 0} items</span>

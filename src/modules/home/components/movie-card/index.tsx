@@ -1,10 +1,10 @@
-import { convertToCurrency } from '@/app/utils/convertCurrency';
+import { convertToCurrency } from '@/utils/convertCurrency';
 import { ButtonHTMLAttributes } from 'react';
-import { CartPlus } from '@/app/modules/home/svg';
+import { CartPlus } from '@/modules/home/svg';
 
 import Image from 'next/image';
-import PrimaryButton from '@/app/share/components/primary-button';
-import Card from '@/app/share/components/card';
+import PrimaryButton from '@/share/components/primary-button';
+import Card from '@/share/components/card';
 
 interface IMovieCard {
   srcImage: string;

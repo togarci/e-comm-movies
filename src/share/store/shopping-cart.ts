@@ -1,4 +1,4 @@
-import { Movie } from '@/app/modules/home/service/getMovies';
+import { Movie } from '@/modules/home/service/getMovies';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -13,7 +13,9 @@ export type ShoppingCartState = {
 
 export type ShoppingCartActions = {
   addToCart: (item: MovieCart) => void;
+  setQuantity: (id: number, quantity: number) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
 };
 
 export const defaultInitState: ShoppingCartState = {
@@ -32,9 +34,7 @@ export const useShoppingCartStore = create(
           if (existingItem) {
             return {
               cartItems: state.cartItems.map((cartItem) =>
-                cartItem.id === item.id
-                  ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-                  : cartItem
+                cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + item.quantity } : cartItem
               ),
             };
           } else {
@@ -43,7 +43,12 @@ export const useShoppingCartStore = create(
             };
           }
         }),
+      setQuantity: (id, quantity) =>
+        set((state) => ({
+          cartItems: state.cartItems.map((item) => (item.id === id ? { ...item, quantity } : item)),
+        })),
       removeFromCart: (id) => set((state) => ({ cartItems: state.cartItems.filter((item) => item.id !== id) })),
+      clearCart: () => set({ cartItems: [] }),
     }),
     {
       name: 'shopping-cart',

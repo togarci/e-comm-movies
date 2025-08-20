@@ -1,13 +1,12 @@
-import Image from 'next/image';
-import MovieCard from '@/app/modules/home/components/movie-card';
+import MovieCard from '@/modules/home/components/movie-card';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useShoppingCartStore } from '@/app/share/store/shopping-cart';
-import EmptyState from '@/app/share/components/empty-state';
-import { Movie } from '@/app/modules/home/service/getMovies/types';
-import { getMovies } from '@/app/modules/home/service/getMovies';
-import LoadingSpinner from '@/app/share/svg/loading-spinner';
+import { useShoppingCartStore } from '@/share/store/shopping-cart';
+import EmptyState from '@/share/components/empty-state';
+import { Movie } from '@/modules/home/service/getMovies/types';
+import { getMovies } from '@/modules/home/service/getMovies';
+import { LoadingSpinnerSVG } from '@/share/svg';
 
 const Home = () => {
   const router = useRouter();
@@ -34,7 +33,7 @@ const Home = () => {
     <section className="max-w-container px-5 mx-auto pb-10">
       {isLoading && (
         <div className="flex w-full justify-center">
-          <LoadingSpinner />
+          <LoadingSpinnerSVG />
         </div>
       )}
 

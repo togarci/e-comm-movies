@@ -1,7 +1,7 @@
-import '@/app/assets/styles/global.css';
-import Header from '@/app/share/components/header';
+import '@/assets/styles/global.css';
+import Header from '@/share/components/header';
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
