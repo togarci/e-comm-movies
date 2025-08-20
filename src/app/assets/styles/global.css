@@ -11,11 +11,16 @@
   --color-gray-800: #333333;
 
   --breakpoint-xxl: 1440px;
-  --max-w-container: 1080px;
+  --spacing-container: 1080px;
 
   --font-sans: 'Open Sans', sans-serif;
 }
 
 body {
   @apply bg-secondary text-white font-sans antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
 }
