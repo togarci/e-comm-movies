@@ -99,9 +99,3 @@ A API é pública, então não é necessário adicionar chaves ou tokens.
 ## Deploy 🚀
 
 Projeto pode ser acessado aqui: [Vercel](https://e-comm-movies.vercel.app/) 🌐
-
----
-
-## Contato 📬
-
-Em caso de dúvidas, fique à vontade para entrar em contato comigo pelo meu [LinkedIn](https://www.linkedin.com/in/seu-perfil/) ou pelo meu [e-mail](mailto:seu-email@example.com). Estou à disposição para ajudar!
